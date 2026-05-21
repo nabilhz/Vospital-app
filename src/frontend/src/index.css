@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Vospital Green Palette */
+    /* Deep green #195C35 → oklch(0.36 0.11 152) */
+    /* Primary green #2E7D32 → oklch(0.46 0.13 148) */
+    /* Pale green #DDEFE1 → oklch(0.94 0.03 155) */
+    /* Light gray #F4F6F7 → oklch(0.97 0.005 195) */
+    /* Red #E53935 → oklch(0.55 0.22 28) */
+    /* Bright green status #9BE28A → oklch(0.84 0.13 145) */
+
+    --background: 0.97 0.005 195;
+    --foreground: 0.1 0 0;
+    --card: 1 0 0;
+    --card-foreground: 0.1 0 0;
+    --popover: 1 0 0;
+    --popover-foreground: 0.1 0 0;
+    --primary: 0.46 0.13 148;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.94 0.03 155;
+    --secondary-foreground: 0.36 0.11 152;
+    --muted: 0.94 0.03 155;
+    --muted-foreground: 0.5 0.02 155;
+    --accent: 0.94 0.03 155;
+    --accent-foreground: 0.36 0.11 152;
+    --destructive: 0.55 0.22 28;
+    --destructive-foreground: 1 0 0;
+    --border: 0.9 0.015 155;
+    --input: 0.9 0.015 155;
+    --ring: 0.46 0.13 148;
+
+    /* Custom Vospital tokens */
+    --vospital-deep: 0.36 0.11 152;
+    --vospital-primary: 0.46 0.13 148;
+    --vospital-pale: 0.94 0.03 155;
+    --vospital-status-green: 0.84 0.13 145;
+    --vospital-urgent: 0.55 0.22 28;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.205 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+  }
+
+  * {
+    @apply border-border;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+    overscroll-behavior: none;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .vospital-deep {
+    background-color: oklch(var(--vospital-deep));
+  }
+  .text-vospital-deep {
+    color: oklch(var(--vospital-deep));
+  }
+  .vospital-primary {
+    background-color: oklch(var(--vospital-primary));
+  }
+  .text-vospital-primary {
+    color: oklch(var(--vospital-primary));
+  }
+  .vospital-pale {
+    background-color: oklch(var(--vospital-pale));
+  }
+  .text-status-green {
+    color: oklch(var(--vospital-status-green));
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
